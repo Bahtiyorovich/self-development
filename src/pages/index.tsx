@@ -1,9 +1,10 @@
-import { Heading } from '@/component';
+import { Heading, Text } from '@/component';
 
 const Home = () => {
 	return (
 		<div>
-			<Heading tag='h1'>test component</Heading>
+			<Heading tag='h1'>Heading test component</Heading>
+			<Text size='s'>Text test component</Text>
 		</div>
 	);
 };
