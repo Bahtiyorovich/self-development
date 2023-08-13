@@ -1,7 +1,11 @@
-import React from 'react';
+import { Heading } from '@/component';
 
 const Home = () => {
-	return <div>Home Page</div>;
+	return (
+		<div>
+			<Heading tag='h1'>test component</Heading>
+		</div>
+	);
 };
 
 export default Home;
