@@ -1,0 +1,12 @@
+{
+    "prettier.semi": true,
+    "prettier.useTabs": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.printWidth": 130,
+    "prettier.bracketSpacing": true,
+    "prettier.arrowParens": "avoid",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
