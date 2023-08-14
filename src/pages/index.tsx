@@ -1,4 +1,4 @@
-import { Button, Heading, Tag, Text } from '@/component';
+import { Button, Heading, Input, Tag, Text, TextArea } from '@/component';
 import { useState } from 'react';
 
 const Home = () => {
@@ -19,6 +19,11 @@ const Home = () => {
 			<Button appearance='ghost' arrow='down'>
 				down
 			</Button>
+			<br />
+			<Input placeholder='username' />
+			<div>
+				<TextArea placeholder='Enter some text' />
+			</div>
 		</div>
 	);
 };
