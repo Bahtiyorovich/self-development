@@ -1,4 +1,4 @@
-import { Button, Heading, Input, Rating, Tag, Text, TextArea } from '@/component';
+import { Button, Card, Heading, Input, Rating, Tag, Text, TextArea } from '@/component';
 import { useState } from 'react';
 
 const Home = () => {
@@ -26,6 +26,8 @@ const Home = () => {
 				<TextArea placeholder='Enter some text' />
 			</div>
 			<Rating rating={rating} isEditable={true} setRating={setRating} />
+			<Card color='primary'>Card Component</Card>
+			<Card color='white'>Card Component</Card>
 		</div>
 	);
 };
