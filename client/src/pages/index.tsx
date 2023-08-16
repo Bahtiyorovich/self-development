@@ -1,12 +1,15 @@
 import { Button, Card, Heading, Input, Rating, Tag, Text, TextArea } from '@/components';
+import { GetServerSideProps } from 'next';
 import { useState } from 'react';
+import axios from 'axios';
+import { withLayout } from '@/layout/layout';
 
 const Home = () => {
 	const [isClick, setIsClick] = useState(false);
-	const [rating, setRating] = useState<number>(4);
+	const [rating, setRating] = useState<number>(0);
 
 	return (
-		<div>
+		<>
 			<Heading tag='h1'>Heading test component</Heading>
 			<Text size='s'>Text test component</Text>
 			<Tag size='s' color='red'>
@@ -28,8 +31,20 @@ const Home = () => {
 			<Rating rating={rating} isEditable={true} setRating={setRating} />
 			<Card color='primary'>Card Component</Card>
 			<Card color='white'>Card Component</Card>
-		</div>
+		</>
 	);
 };
 
-export default Home;
+export default withLayout(Home);
+
+// SSR function
+export const getServerSideProps: GetServerSideProps = async () => {
+	const {data} = await axios.post('http://localhost:8100/page-find', {firstCategory: 0});
+	
+	return {
+		props: {
+			data,
+		},
+	}
+}
+
