@@ -33,14 +33,6 @@ const Home = ({firstCategory, menu}: HomeProps):JSX.Element => {
 			<Rating rating={rating} isEditable={true} setRating={setRating} />
 			<Card color='primary'>Card Component</Card>
 			<Card color='white'>Card Component</Card>
-
-			<ul>
-				{menu.map(c => (
-					<li key={c._id.secondCategory}>
-						{c._id.secondCategory}
-					</li>
-				))}
-			</ul>
 		</>
 	);
 };
