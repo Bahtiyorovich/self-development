@@ -32,7 +32,7 @@
     cursor: pointer;
     text-transform: uppercase;
     color: var(--primary);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 12px;
     line-height: 20px;
     width: 100%;
@@ -40,12 +40,14 @@
     border-radius: 18px;
     background-color: rgba(245, 245, 204, .4);
     border: 1px solid #e5e5e5;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     box-sizing: border-box;
 }
 
 .secondLevel:hover {
-    transform: scale(1.05);
+    transform: translate(5px);
+    background-color: var(--gray-light);
+    color: var(--white);
 }
 
 .secondLevelBlock {
@@ -65,13 +67,16 @@
     line-height: 19px;
     display: block;
     transition: all 0.2s ease;
+    border-bottom: 2px dotted var(--gray-light);
+    padding-bottom: 5px;
 }
 
 .thirdLevel:hover {
-    transform: translateX(10px);
+    padding-left: 10px;
     color: var(--primary);
 }
 .thirdLevelActive {
+    padding-left: 10px;
     color: var(--primary);
 }
 
