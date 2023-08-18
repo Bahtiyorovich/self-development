@@ -3,8 +3,10 @@ import { GetServerSideProps } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
 import { withLayout } from '@/layout/layout';
+import { MenuItem } from '@/interfaces/menu.interface';
 
-const Home = () => {
+const Home = ({firstCategory, menu}: HomeProps):JSX.Element => {
+
 	const [isClick, setIsClick] = useState(false);
 	const [rating, setRating] = useState<number>(0);
 
@@ -31,6 +33,14 @@ const Home = () => {
 			<Rating rating={rating} isEditable={true} setRating={setRating} />
 			<Card color='primary'>Card Component</Card>
 			<Card color='white'>Card Component</Card>
+
+			<ul>
+				{menu.map(c => (
+					<li key={c._id.secondCategory}>
+						{c._id.secondCategory}
+					</li>
+				))}
+			</ul>
 		</>
 	);
 };
@@ -38,13 +48,17 @@ const Home = () => {
 export default withLayout(Home);
 
 // SSR function
-export const getServerSideProps: GetServerSideProps = async () => {
-	const {data} = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/page-find`, {firstCategory: 0});
-	
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+	const firstCategory = 0;
+	const {data: menu} = await axios.post<MenuItem[]>(`${process.env.NEXT_PUBLIC_DOMAIN}/api/page-find`, {firstCategory});
 	return {
 		props: {
-			data,
+			menu,
+			firstCategory,
 		},
 	}
 }
-
+interface HomeProps extends Record<string, unknown>{
+	firstCategory: number,
+	menu: MenuItem[],
+}
