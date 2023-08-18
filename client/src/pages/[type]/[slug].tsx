@@ -5,10 +5,11 @@ import { ProductModel } from "@/interfaces/product.interface";
 import { withLayout } from "@/layout/layout"
 import axios from "axios";
 import { GetServerSideProps } from "next";
+import  CoursePageComponent  from '../../page-component/course-page-component/course-page-component';
 
-const Index = ({products}: PageProps): JSX.Element => {
+const Index = ({products, page, firstCategory}: PageProps): JSX.Element => {
   return (
-    <div>{products.length}</div>
+    <CoursePageComponent firstCategory={firstCategory} products={products} page={page} />
   )
 }
 
