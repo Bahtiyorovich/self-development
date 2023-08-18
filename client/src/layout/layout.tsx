@@ -21,11 +21,11 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(Comp
   return function withLayoutComponents(props: T):JSX.Element {
     console.log(props)
     return (
-      <Layout>
         <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
-          <Component {...props}/>
+          <Layout>
+              <Component {...props}/>
+          </Layout>  
         </AppContextProvider>
-      </Layout>  
     )
   }
 }

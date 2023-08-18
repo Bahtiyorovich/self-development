@@ -1,8 +1,11 @@
+import { Menu } from '..'
 import { SidebarProps } from './sidebar.props'
 
 const Sidebar = ({...props}: SidebarProps):JSX.Element => {
   return (
-    <div {...props}>Sidebar</div>
+    <div {...props}>
+      <Menu/>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { withLayout } from '@/layout/layout';
 import { MenuItem } from '@/interfaces/menu.interface';
 
-const Home = ({firstCategory, menu}: HomeProps):JSX.Element => {
+const Home = ():JSX.Element => {
 
 	const [isClick, setIsClick] = useState(false);
 	const [rating, setRating] = useState<number>(0);

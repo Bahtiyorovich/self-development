@@ -1,0 +1,91 @@
+.firstLevel {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 20px;
+    align-items: center;
+    font-weight:500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top:20px;
+    color: var(--black);
+}
+
+.firstLevelActive,
+.firstLevel:hover {
+    color: var(--primary);
+}
+
+.firstLevelActive svg,
+.firstLevel:hover svg {
+    fill: var(--primary);
+}
+
+.secondBlock {
+    margin-top: 15px;
+    margin-right: 12px;
+    padding-right: 32px;
+    border-right: 1px solid #e5e5e5e5;
+}
+
+.secondLevel {
+    margin: 10px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 20px;
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background-color: rgba(245, 245, 204, .4);
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.secondLevel:hover {
+    transform: scale(1.05);
+}
+
+.secondLevelBlock {
+    display: none;
+}
+
+.secondLevelBlockActive {
+    display: block;
+}
+
+.thirdLevel {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: var(--gray-light);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.thirdLevel:hover {
+    transform: translateX(10px);
+    color: var(--primary);
+}
+.thirdLevelActive {
+    color: var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
