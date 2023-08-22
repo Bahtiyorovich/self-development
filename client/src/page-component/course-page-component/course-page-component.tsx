@@ -1,7 +1,7 @@
 import { CoursePageComponentProps } from "./course-page-component.props"
 import styles from './course-page-component.module.css'
 import cn from 'classnames'
-import { Heading, HhData, Tag, Text } from "@/components"
+import { Heading, HhData, Product, Tag, Text } from "@/components"
 import Advantages from "@/components/advantages/advantages"
 
 
@@ -16,8 +16,11 @@ const CoursePageComponent = ({firstCategory, page, products}: CoursePageComponen
             <div>Sort...</div>
         </div>
         {/* PRODUCT */}
+        
         <div>
-            PRODUCT ITEM
+           {products.map((i => (
+            <Product key={i._id} product={i}/>
+           )))}
         </div>
         {/* VOCATION */}
         <div className={styles.hhTitle}>
